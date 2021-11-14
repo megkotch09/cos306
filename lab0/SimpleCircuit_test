@@ -1,0 +1,66 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7febe7e04cc0 .scope module, "SimpleCircuit_test" "SimpleCircuit_test" 2 1;
+ .timescale 0 0;
+v0x7febe7e14860_0 .var "counter", 3 0;
+v0x7febe7e14920_0 .net "out", 0 0, L_0x7febe7e14ab0;  1 drivers
+E_0x7febe7e04b60 .event edge, v0x7febe7e14860_0;
+L_0x7febe7e14bc0 .part v0x7febe7e14860_0, 2, 1;
+L_0x7febe7e14ca0 .part v0x7febe7e14860_0, 1, 1;
+L_0x7febe7e14dc0 .part v0x7febe7e14860_0, 0, 1;
+S_0x7febe7e04e30 .scope module, "circuit_under_test" "SimpleCircuit" 2 5, 3 1 0, S_0x7febe7e04cc0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /INPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "f";
+L_0x7febe7e149c0 .functor OR 1, L_0x7febe7e14bc0, L_0x7febe7e14ca0, C4<0>, C4<0>;
+L_0x7febe7e14ab0 .functor AND 1, L_0x7febe7e149c0, L_0x7febe7e14dc0, C4<1>, C4<1>;
+v0x7febe7e04fa0_0 .net "a", 0 0, L_0x7febe7e14bc0;  1 drivers
+v0x7febe7e14550_0 .net "b", 0 0, L_0x7febe7e14ca0;  1 drivers
+v0x7febe7e145f0_0 .net "c", 0 0, L_0x7febe7e14dc0;  1 drivers
+v0x7febe7e146a0_0 .net "d", 0 0, L_0x7febe7e149c0;  1 drivers
+v0x7febe7e14740_0 .net "f", 0 0, L_0x7febe7e14ab0;  alias, 1 drivers
+    .scope S_0x7febe7e04cc0;
+T_0 ;
+    %wait E_0x7febe7e04b60;
+    %load/vec4 v0x7febe7e14860_0;
+    %parti/s 1, 3, 3;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %vpi_call 2 14 "$finish" {0 0 0};
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x7febe7e04cc0;
+T_1 ;
+    %vpi_call 2 19 "$dumpfile", "SimpleCircuit_test.vcd" {0 0 0};
+    %vpi_call 2 20 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7febe7e14860_0, 0, 4;
+T_1.0 ;
+    %pushi/vec4 1, 0, 32;
+    %or/r;
+    %flag_set/vec4 8;
+    %jmp/0xz T_1.1, 8;
+    %delay 1, 0;
+    %load/vec4 v0x7febe7e14860_0;
+    %addi 1, 0, 4;
+    %store/vec4 v0x7febe7e14860_0, 0, 4;
+    %jmp T_1.0;
+T_1.1 ;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "SimpleCircuit.t.v";
+    "SimpleCircuit.v";
