@@ -1,0 +1,104 @@
+$date
+	Thu Oct  7 23:18:44 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module MemBlock_test $end
+$var wire 1 ! q $end
+$var wire 1 " nq $end
+$var reg 1 # x $end
+$var reg 1 $ y $end
+$scope module mem $end
+$var wire 1 % four $end
+$var wire 1 # x $end
+$var wire 1 $ y $end
+$var wire 1 & two $end
+$var wire 1 ' three $end
+$var wire 1 ! q $end
+$var wire 1 ( one $end
+$var wire 1 " nq $end
+$scope module L1 $end
+$var wire 1 ( nq $end
+$var wire 1 $ nr $end
+$var wire 1 % ns $end
+$var wire 1 & q $end
+$upscope $end
+$scope module L2 $end
+$var wire 1 ' nq $end
+$var wire 1 # nr $end
+$var wire 1 ( ns $end
+$var wire 1 ) q $end
+$upscope $end
+$scope module L3 $end
+$var wire 1 " nq $end
+$var wire 1 & nr $end
+$var wire 1 ' ns $end
+$var wire 1 ! q $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0)
+1(
+1'
+1&
+0%
+0$
+0#
+x"
+x!
+$end
+#1
+1)
+0(
+1$
+#2
+0)
+1(
+0$
+#3
+0!
+1"
+0&
+1%
+1#
+#4
+1&
+0%
+0#
+#5
+0&
+1%
+1#
+#6
+1$
+#7
+1)
+0(
+1&
+0%
+0#
+#8
+0"
+1!
+0'
+1#
+#9
+1(
+0$
+#10
+0(
+1$
+#11
+0)
+1(
+1'
+0$
+0#
+#12

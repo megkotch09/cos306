@@ -1,0 +1,95 @@
+$date
+	Wed Sep 22 16:27:11 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module Popcount_test $end
+$var wire 2 ! out [1:0] $end
+$var reg 4 " counter [3:0] $end
+$scope module circuit_under_test $end
+$var wire 3 # bitstring [2:0] $end
+$var wire 1 $ y $end
+$var wire 1 % z $end
+$var wire 2 & popcount [1:0] $end
+$var wire 1 ' c $end
+$var wire 1 ( b $end
+$var wire 1 ) a $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0)
+0(
+0'
+b0 &
+0%
+0$
+b0 #
+b0 "
+b0 !
+$end
+#1
+b1 !
+b1 &
+1%
+1)
+b1 #
+b1 "
+#2
+0)
+1(
+b10 #
+b10 "
+#3
+0%
+b10 !
+b10 &
+1$
+1)
+b11 #
+b11 "
+#4
+0$
+b1 !
+b1 &
+1%
+0)
+0(
+1'
+b100 #
+b100 "
+#5
+0%
+b10 !
+b10 &
+1$
+1)
+b101 #
+b101 "
+#6
+0)
+1(
+b110 #
+b110 "
+#7
+b11 !
+b11 &
+1%
+1)
+b111 #
+b111 "
+#8
+0%
+b0 !
+b0 &
+0$
+0)
+0(
+0'
+b0 #
+b1000 "

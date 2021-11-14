@@ -1,0 +1,92 @@
+$date
+	Thu Sep 30 15:42:36 2021
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module FullAdderTest $end
+$var wire 1 ! s $end
+$var wire 1 " co $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % ci $end
+$var reg 4 & err_cnt [3:0] $end
+$var reg 4 ' pass_cnt [3:0] $end
+$scope module fa $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % ci $end
+$var wire 1 " co $end
+$var wire 1 ! s $end
+$var wire 1 ( x $end
+$var wire 1 ) y $end
+$var wire 1 * z $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+0*
+0)
+0(
+b0 '
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+b1 '
+#10
+1!
+1%
+#15
+b10 '
+#20
+0%
+1$
+#25
+b11 '
+#30
+1"
+1)
+0!
+1%
+#35
+b100 '
+#40
+0"
+1!
+0)
+0%
+0$
+1#
+#45
+b101 '
+#50
+1"
+1*
+0!
+1%
+#55
+b110 '
+#60
+0*
+1(
+0%
+1$
+#65
+b111 '
+#70
+1)
+1*
+1!
+1%
+#75
+b1000 '
+#80

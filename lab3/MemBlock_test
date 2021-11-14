@@ -1,0 +1,124 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7f9807505340 .scope module, "MemBlock_test" "MemBlock_test" 2 1;
+ .timescale 0 0;
+v0x7f9807516b30_0 .net "nq", 0 0, L_0x7f9807517350;  1 drivers
+v0x7f9807516c00_0 .net "q", 0 0, L_0x7f98075172e0;  1 drivers
+v0x7f9807516cd0_0 .var "x", 0 0;
+v0x7f9807516da0_0 .var "y", 0 0;
+S_0x7f98075054b0 .scope module, "mem" "MemBlock" 2 11, 3 3 0, S_0x7f9807505340;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "nq";
+L_0x7f9807516e70 .functor AND 1, L_0x7f98075171f0, v0x7f9807516cd0_0, C4<1>, C4<1>;
+v0x7f9807516560_0 .net "four", 0 0, L_0x7f9807516e70;  1 drivers
+v0x7f9807516600_0 .net "nq", 0 0, L_0x7f9807517350;  alias, 1 drivers
+v0x7f98075166b0_0 .net "one", 0 0, L_0x7f9807516f90;  1 drivers
+v0x7f98075167a0_0 .net "q", 0 0, L_0x7f98075172e0;  alias, 1 drivers
+v0x7f9807516830_0 .net "three", 0 0, L_0x7f98075171f0;  1 drivers
+v0x7f9807516940_0 .net "two", 0 0, L_0x7f9807516f20;  1 drivers
+v0x7f9807516a10_0 .net "x", 0 0, v0x7f9807516cd0_0;  1 drivers
+v0x7f9807516aa0_0 .net "y", 0 0, v0x7f9807516da0_0;  1 drivers
+S_0x7f9807505620 .scope module, "L1" "Latch" 3 15, 4 1 0, S_0x7f98075054b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "ns";
+    .port_info 1 /INPUT 1 "nr";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "nq";
+L_0x7f9807516f20 .functor NAND 1, L_0x7f9807516e70, L_0x7f9807516f90, C4<1>, C4<1>;
+L_0x7f9807516f90 .functor NAND 1, v0x7f9807516da0_0, L_0x7f9807516f20, C4<1>, C4<1>;
+v0x7f9807505840_0 .net "nq", 0 0, L_0x7f9807516f90;  alias, 1 drivers
+v0x7f98075158c0_0 .net "nr", 0 0, v0x7f9807516da0_0;  alias, 1 drivers
+v0x7f9807515960_0 .net "ns", 0 0, L_0x7f9807516e70;  alias, 1 drivers
+v0x7f9807515a10_0 .net "q", 0 0, L_0x7f9807516f20;  alias, 1 drivers
+S_0x7f9807515b10 .scope module, "L2" "Latch" 3 22, 4 1 0, S_0x7f98075054b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "ns";
+    .port_info 1 /INPUT 1 "nr";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "nq";
+L_0x7f9807517100 .functor NAND 1, L_0x7f9807516f90, L_0x7f98075171f0, C4<1>, C4<1>;
+L_0x7f98075171f0 .functor NAND 1, v0x7f9807516cd0_0, L_0x7f9807517100, C4<1>, C4<1>;
+v0x7f9807515d40_0 .net "nq", 0 0, L_0x7f98075171f0;  alias, 1 drivers
+v0x7f9807515de0_0 .net "nr", 0 0, v0x7f9807516cd0_0;  alias, 1 drivers
+v0x7f9807515e80_0 .net "ns", 0 0, L_0x7f9807516f90;  alias, 1 drivers
+v0x7f9807515f50_0 .net "q", 0 0, L_0x7f9807517100;  1 drivers
+S_0x7f9807516030 .scope module, "L3" "Latch" 3 28, 4 1 0, S_0x7f98075054b0;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "ns";
+    .port_info 1 /INPUT 1 "nr";
+    .port_info 2 /OUTPUT 1 "q";
+    .port_info 3 /OUTPUT 1 "nq";
+L_0x7f98075172e0 .functor NAND 1, L_0x7f98075171f0, L_0x7f9807517350, C4<1>, C4<1>;
+L_0x7f9807517350 .functor NAND 1, L_0x7f9807516f20, L_0x7f98075172e0, C4<1>, C4<1>;
+v0x7f9807516270_0 .net "nq", 0 0, L_0x7f9807517350;  alias, 1 drivers
+v0x7f9807516310_0 .net "nr", 0 0, L_0x7f9807516f20;  alias, 1 drivers
+v0x7f98075163d0_0 .net "ns", 0 0, L_0x7f98075171f0;  alias, 1 drivers
+v0x7f98075164a0_0 .net "q", 0 0, L_0x7f98075172e0;  alias, 1 drivers
+    .scope S_0x7f9807505340;
+T_0 ;
+    %vpi_call 2 7 "$dumpfile", "MemBlock_test.vcd" {0 0 0};
+    %vpi_call 2 8 "$dumpvars" {0 0 0};
+    %end;
+    .thread T_0;
+    .scope S_0x7f9807505340;
+T_1 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516cd0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x7f9807516da0_0, 0, 1;
+    %delay 1, 0;
+    %vpi_call 2 47 "$finish" {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "MemBlock.t.v";
+    "MemBlock_structural.v";
+    "./Latch_structural.v";

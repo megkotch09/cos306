@@ -1,0 +1,130 @@
+#! /usr/local/Cellar/icarus-verilog/11.0/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/system.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/usr/local/Cellar/icarus-verilog/11.0/lib/ivl/va_math.vpi";
+S_0x7fe69a406d90 .scope module, "Popcount_test" "Popcount_test" 2 1;
+ .timescale 0 0;
+v0x7fe69b808300_0 .var "counter", 3 0;
+v0x7fe69b8083c0_0 .net "out", 1 0, L_0x7fe69b80a550;  1 drivers
+E_0x7fe69a4079e0 .event edge, v0x7fe69b808300_0;
+L_0x7fe69b80a6e0 .part v0x7fe69b808300_0, 0, 3;
+S_0x7fe69a605a20 .scope module, "circuit_under_test" "Popcount" 2 5, 3 1 0, S_0x7fe69a406d90;
+ .timescale 0 0;
+    .port_info 0 /INPUT 3 "bitstring";
+    .port_info 1 /OUTPUT 2 "popcount";
+L_0x7fe69b808780 .functor AND 1, L_0x7fe69b808680, L_0x7fe69b808500, C4<1>, C4<1>;
+L_0x7fe69b808890 .functor AND 1, L_0x7fe69b808780, L_0x7fe69b8085e0, C4<1>, C4<1>;
+L_0x7fe69b808a50 .functor AND 1, L_0x7fe69b808460, L_0x7fe69b808980, C4<1>, C4<1>;
+L_0x7fe69b808b00 .functor AND 1, L_0x7fe69b808a50, L_0x7fe69b8085e0, C4<1>, C4<1>;
+L_0x7fe69b808bf0 .functor OR 1, L_0x7fe69b808890, L_0x7fe69b808b00, C4<0>, C4<0>;
+L_0x7fe69b808d30 .functor AND 1, L_0x7fe69b808460, L_0x7fe69b808500, C4<1>, C4<1>;
+L_0x7fe69b808fc0 .functor AND 1, L_0x7fe69b808d30, L_0x7fe69b808ea0, C4<1>, C4<1>;
+L_0x7fe69b809070 .functor OR 1, L_0x7fe69b808bf0, L_0x7fe69b808fc0, C4<0>, C4<0>;
+L_0x7fe69b809160 .functor AND 1, L_0x7fe69b808460, L_0x7fe69b808500, C4<1>, C4<1>;
+L_0x7fe69b809220 .functor AND 1, L_0x7fe69b809160, L_0x7fe69b8085e0, C4<1>, C4<1>;
+L_0x7fe69b809290 .functor OR 1, L_0x7fe69b809070, L_0x7fe69b809220, C4<0>, C4<0>;
+L_0x7fe69b809540 .functor AND 1, L_0x7fe69b809400, L_0x7fe69b8094a0, C4<1>, C4<1>;
+L_0x7fe69b809630 .functor AND 1, L_0x7fe69b809540, L_0x7fe69b8085e0, C4<1>, C4<1>;
+L_0x7fe69b8097f0 .functor AND 1, L_0x7fe69b809750, L_0x7fe69b808500, C4<1>, C4<1>;
+L_0x7fe69b809940 .functor AND 1, L_0x7fe69b8097f0, L_0x7fe69b8098a0, C4<1>, C4<1>;
+L_0x7fe69b8096e0 .functor OR 1, L_0x7fe69b809630, L_0x7fe69b809940, C4<0>, C4<0>;
+L_0x7fe69b808e20 .functor AND 1, L_0x7fe69b808460, L_0x7fe69b809b50, C4<1>, C4<1>;
+L_0x7fe69b809a50 .functor AND 1, L_0x7fe69b808e20, L_0x7fe69b809ee0, C4<1>, C4<1>;
+L_0x7fe69b80a080 .functor OR 1, L_0x7fe69b8096e0, L_0x7fe69b809a50, C4<0>, C4<0>;
+L_0x7fe69b80a1d0 .functor AND 1, L_0x7fe69b808460, L_0x7fe69b808500, C4<1>, C4<1>;
+L_0x7fe69b809e50 .functor AND 1, L_0x7fe69b80a1d0, L_0x7fe69b8085e0, C4<1>, C4<1>;
+L_0x7fe69b80a350 .functor OR 1, L_0x7fe69b80a080, L_0x7fe69b809e50, C4<0>, C4<0>;
+L_0x7fe69b80a3e0 .functor BUFZ 1, L_0x7fe69b80a350, C4<0>, C4<0>, C4<0>;
+L_0x7fe69b80a630 .functor BUFZ 1, L_0x7fe69b809290, C4<0>, C4<0>, C4<0>;
+v0x7fe69a406f00_0 .net *"_ivl_10", 0 0, L_0x7fe69b808890;  1 drivers
+v0x7fe69b806840_0 .net *"_ivl_13", 0 0, L_0x7fe69b808980;  1 drivers
+v0x7fe69b8068f0_0 .net *"_ivl_14", 0 0, L_0x7fe69b808a50;  1 drivers
+v0x7fe69b8069a0_0 .net *"_ivl_16", 0 0, L_0x7fe69b808b00;  1 drivers
+v0x7fe69b806a30_0 .net *"_ivl_19", 0 0, L_0x7fe69b808bf0;  1 drivers
+v0x7fe69b806b00_0 .net *"_ivl_20", 0 0, L_0x7fe69b808d30;  1 drivers
+v0x7fe69b806bb0_0 .net *"_ivl_23", 0 0, L_0x7fe69b808ea0;  1 drivers
+v0x7fe69b806c50_0 .net *"_ivl_24", 0 0, L_0x7fe69b808fc0;  1 drivers
+v0x7fe69b806d00_0 .net *"_ivl_27", 0 0, L_0x7fe69b809070;  1 drivers
+v0x7fe69b806e10_0 .net *"_ivl_28", 0 0, L_0x7fe69b809160;  1 drivers
+v0x7fe69b806eb0_0 .net *"_ivl_30", 0 0, L_0x7fe69b809220;  1 drivers
+v0x7fe69b806f60_0 .net *"_ivl_35", 0 0, L_0x7fe69b809400;  1 drivers
+v0x7fe69b807000_0 .net *"_ivl_37", 0 0, L_0x7fe69b8094a0;  1 drivers
+v0x7fe69b8070a0_0 .net *"_ivl_38", 0 0, L_0x7fe69b809540;  1 drivers
+v0x7fe69b807150_0 .net *"_ivl_40", 0 0, L_0x7fe69b809630;  1 drivers
+v0x7fe69b807200_0 .net *"_ivl_43", 0 0, L_0x7fe69b809750;  1 drivers
+v0x7fe69b8072a0_0 .net *"_ivl_44", 0 0, L_0x7fe69b8097f0;  1 drivers
+v0x7fe69b807430_0 .net *"_ivl_47", 0 0, L_0x7fe69b8098a0;  1 drivers
+v0x7fe69b8074c0_0 .net *"_ivl_48", 0 0, L_0x7fe69b809940;  1 drivers
+v0x7fe69b807560_0 .net *"_ivl_51", 0 0, L_0x7fe69b8096e0;  1 drivers
+v0x7fe69b807600_0 .net *"_ivl_53", 0 0, L_0x7fe69b809b50;  1 drivers
+v0x7fe69b8076a0_0 .net *"_ivl_54", 0 0, L_0x7fe69b808e20;  1 drivers
+v0x7fe69b807750_0 .net *"_ivl_57", 0 0, L_0x7fe69b809ee0;  1 drivers
+v0x7fe69b8077f0_0 .net *"_ivl_58", 0 0, L_0x7fe69b809a50;  1 drivers
+v0x7fe69b8078a0_0 .net *"_ivl_61", 0 0, L_0x7fe69b80a080;  1 drivers
+v0x7fe69b807940_0 .net *"_ivl_62", 0 0, L_0x7fe69b80a1d0;  1 drivers
+v0x7fe69b8079f0_0 .net *"_ivl_64", 0 0, L_0x7fe69b809e50;  1 drivers
+v0x7fe69b807aa0_0 .net *"_ivl_7", 0 0, L_0x7fe69b808680;  1 drivers
+v0x7fe69b807b40_0 .net *"_ivl_71", 0 0, L_0x7fe69b80a3e0;  1 drivers
+v0x7fe69b807bf0_0 .net *"_ivl_76", 0 0, L_0x7fe69b80a630;  1 drivers
+v0x7fe69b807ca0_0 .net *"_ivl_8", 0 0, L_0x7fe69b808780;  1 drivers
+v0x7fe69b807d50_0 .net "a", 0 0, L_0x7fe69b808460;  1 drivers
+v0x7fe69b807df0_0 .net "b", 0 0, L_0x7fe69b808500;  1 drivers
+v0x7fe69b807340_0 .net "bitstring", 2 0, L_0x7fe69b80a6e0;  1 drivers
+v0x7fe69b808080_0 .net "c", 0 0, L_0x7fe69b8085e0;  1 drivers
+v0x7fe69b808110_0 .net "popcount", 1 0, L_0x7fe69b80a550;  alias, 1 drivers
+v0x7fe69b8081a0_0 .net "y", 0 0, L_0x7fe69b809290;  1 drivers
+v0x7fe69b808230_0 .net "z", 0 0, L_0x7fe69b80a350;  1 drivers
+L_0x7fe69b808460 .part L_0x7fe69b80a6e0, 0, 1;
+L_0x7fe69b808500 .part L_0x7fe69b80a6e0, 1, 1;
+L_0x7fe69b8085e0 .part L_0x7fe69b80a6e0, 2, 1;
+L_0x7fe69b808680 .reduce/nor L_0x7fe69b808460;
+L_0x7fe69b808980 .reduce/nor L_0x7fe69b808500;
+L_0x7fe69b808ea0 .reduce/nor L_0x7fe69b8085e0;
+L_0x7fe69b809400 .reduce/nor L_0x7fe69b808460;
+L_0x7fe69b8094a0 .reduce/nor L_0x7fe69b808500;
+L_0x7fe69b809750 .reduce/nor L_0x7fe69b808460;
+L_0x7fe69b8098a0 .reduce/nor L_0x7fe69b8085e0;
+L_0x7fe69b809b50 .reduce/nor L_0x7fe69b808500;
+L_0x7fe69b809ee0 .reduce/nor L_0x7fe69b8085e0;
+L_0x7fe69b80a550 .concat8 [ 1 1 0 0], L_0x7fe69b80a3e0, L_0x7fe69b80a630;
+    .scope S_0x7fe69a406d90;
+T_0 ;
+    %wait E_0x7fe69a4079e0;
+    %load/vec4 v0x7fe69b808300_0;
+    %parti/s 1, 3, 3;
+    %flag_set/vec4 8;
+    %jmp/0xz  T_0.0, 8;
+    %vpi_call 2 12 "$finish" {0 0 0};
+T_0.0 ;
+    %jmp T_0;
+    .thread T_0, $push;
+    .scope S_0x7fe69a406d90;
+T_1 ;
+    %vpi_call 2 17 "$dumpfile", "Popcount_test.vcd" {0 0 0};
+    %vpi_call 2 18 "$dumpvars" {0 0 0};
+    %pushi/vec4 0, 0, 4;
+    %store/vec4 v0x7fe69b808300_0, 0, 4;
+T_1.0 ;
+    %pushi/vec4 1, 0, 32;
+    %or/r;
+    %flag_set/vec4 8;
+    %jmp/0xz T_1.1, 8;
+    %delay 1, 0;
+    %load/vec4 v0x7fe69b808300_0;
+    %addi 1, 0, 4;
+    %store/vec4 v0x7fe69b808300_0, 0, 4;
+    %jmp T_1.0;
+T_1.1 ;
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "Popcount.t.v";
+    "Popcount_structural.v";
