@@ -2,6 +2,8 @@ module SimpleCircuit2_test;
     reg [3:0] counter;
     wire out;
 
+/*  this is a comment */
+
     SimpleCircuit circuit_under_test(
         .a(counter[2]),
         .b(counter[1]),
